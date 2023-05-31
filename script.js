@@ -1,19 +1,19 @@
 // JavaScript Object payload 
 
 let wowClasses = {"classes": [
-    {"name": "Warrior", "Tank": "Yes", "DPS": "Yes", "Healing": "No"},
-    {"name": "Paladin", "Tank": "Yes", "DPS": "Yes", "Healing": "Yes"},
-    {"name": "Death Knight", "Tank": "Yes", "DPS": "Yes", "Healing": "No"},
-    {"name": "Hunter", "Tank": "No", "DPS": "Yes", "Healing": "No"},
-    {"name": "Shaman", "Tank": "No", "DPS": "Yes", "Healing": "Yes"},
-    {"name": "Evoker", "Tank": "No", "DPS": "Yes", "Healing": "Yes"},
-    {"name": "Rogue", "Tank": "No", "DPS": "Yes", "Healing": "No"},
-    {"name": "Druid", "Tank": "Yes", "DPS": "Yes", "Healing": "Yes"},
-    {"name": "Demon Hunter", "Tank": "Yes", "DPS": "Yes", "Healing": "No"},
-    {"name": "Monk", "Tank": "Yes", "DPS": "Yes", "Healing": "Yes"},
-    {"name": "Mage", "Tank": "No", "DPS": "Yes", "Healing": "No"},
-    {"name": "Priest", "Tank": "No", "DPS": "Yes", "Healing": "Yes"},
-    {"name": "Warlock", "Tank": "No", "DPS": "Yes", "Healing": "No"}
+    {"name": "Warrior", "Tank": "Yes", "DPS": "Yes", "Healing": "No", "Type": "Plate"},
+    {"name": "Paladin", "Tank": "Yes", "DPS": "Yes", "Healing": "Yes", "Type": "Plate"},
+    {"name": "Death Knight", "Tank": "Yes", "DPS": "Yes", "Healing": "No", "Type": "Plate"},
+    {"name": "Hunter", "Tank": "No", "DPS": "Yes", "Healing": "No", "Type": "Mail"},
+    {"name": "Shaman", "Tank": "No", "DPS": "Yes", "Healing": "Yes", "Type": "Mail"},
+    {"name": "Evoker", "Tank": "No", "DPS": "Yes", "Healing": "Yes", "Type": "Mail"},
+    {"name": "Rogue", "Tank": "No", "DPS": "Yes", "Healing": "No", "Type": "Leather"},
+    {"name": "Druid", "Tank": "Yes", "DPS": "Yes", "Healing": "Yes", "Type": "Leather"},
+    {"name": "Demon Hunter", "Tank": "Yes", "DPS": "Yes", "Healing": "No", "Type": "Leather"},
+    {"name": "Monk", "Tank": "Yes", "DPS": "Yes", "Healing": "Yes", "Type": "Leather"},
+    {"name": "Mage", "Tank": "No", "DPS": "Yes", "Healing": "No", "Type": "Cloth"},
+    {"name": "Priest", "Tank": "No", "DPS": "Yes", "Healing": "Yes", "Type": "Cloth"},
+    {"name": "Warlock", "Tank": "No", "DPS": "Yes", "Healing": "No", "Type": "Cloth"}
 ]};
 
 let jsonString = JSON.stringify(wowClasses);
@@ -40,6 +40,18 @@ for (i in wowClasses.classes) {
     cell4.textContent = wowClasses.classes[i].Healing;
     cell4.classList.add("center");
 
+    if (wowClasses.classes[i].Type == "Plate") {
+        row.classList.add("Plate")
+    }
+    if (wowClasses.classes[i].Type == "Mail") {
+        row.classList.add("Mail")
+    }
+    if (wowClasses.classes[i].Type == "Leather") {
+        row.classList.add("Leather")
+    }
+    if (wowClasses.classes[i].Type == "Cloth") {
+        row.classList.add("Cloth")
+    }
 
     row.appendChild(cell1);
     row.appendChild(cell2);
